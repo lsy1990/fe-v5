@@ -77,7 +77,7 @@ function StatItem(props) {
 
 export default function Stat(props: IProps) {
   const { values, series } = props;
-  const { custom, options } = values;
+  const { custom = {}, options } = values;
   const { calc, textMode, colorMode, colSpan, textSize } = custom;
   const calculatedValues = getCalculatedValuesBySeries(
     series,

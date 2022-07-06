@@ -36,7 +36,7 @@ interface IProps {
 
 export default function index(props: IProps) {
   const { values, series, inDashboard = true, chartHeight = '200px', tableHeight = '200px' } = props;
-  const { custom, options = {} } = values;
+  const { custom = {}, options = {} } = values;
   const [seriesData, setSeriesData] = useState(series);
   const [activeLegend, setActiveLegend] = useState('');
   const chartEleRef = useRef<HTMLDivElement>(null);

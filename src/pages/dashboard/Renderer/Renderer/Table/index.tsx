@@ -50,7 +50,7 @@ export default function Stat(props: IProps) {
   const size = useSize(eleRef);
   const { dispatch } = useContext(Context);
   const { values, series } = props;
-  const { custom, options, overrides } = values;
+  const { custom = {}, options, overrides } = values;
   const { showHeader, calc, aggrDimension, displayMode, columns, sortColumn, sortOrder, colorMode = 'value' } = custom;
   const [calculatedValues, setCalculatedValues] = React.useState([]);
   const [sortObj, setSortObj] = React.useState({

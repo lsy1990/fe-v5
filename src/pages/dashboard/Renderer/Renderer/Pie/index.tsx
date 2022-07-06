@@ -28,7 +28,7 @@ interface IProps {
 
 export default function Pie(props: IProps) {
   const { values, series } = props;
-  const { custom, options } = values;
+  const { custom = {}, options } = values;
   const { calc, legengPosition, max, labelWithName } = custom;
   const calculatedValues = getCalculatedValuesBySeries(
     series,
