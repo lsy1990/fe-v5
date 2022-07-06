@@ -146,9 +146,28 @@ export default function Chart() {
           </div>
           {chartData.map((item: any, index) => {
             if (semver.valid(item.dataProps?.version)) {
+              const legendDisplayMode = _.get(item.dataProps, 'options.legend.displayMode');
               return (
                 <div style={{ height: 400, border: '1px solid #efefef' }}>
-                  <Renderer dashboardId={item.id} key={index} time={range} step={step} type={item.dataProps?.type} values={item.dataProps as any} isPreview />
+                  <Renderer
+                    dashboardId={item.id}
+                    key={index}
+                    time={range}
+                    step={step}
+                    type={item.dataProps?.type}
+                    values={
+                      {
+                        ...item.dataProps,
+                        options: {
+                          ...item.dataProps.options,
+                          legend: {
+                            displayMode: legendDisplayMode === 'hidden' ? 'table' : legendDisplayMode,
+                          },
+                        },
+                      } as any
+                    }
+                    isPreview
+                  />
                 </div>
               );
             }
