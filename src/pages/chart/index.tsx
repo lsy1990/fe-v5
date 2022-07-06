@@ -148,7 +148,7 @@ export default function Chart() {
             if (semver.valid(item.dataProps?.version)) {
               const legendDisplayMode = _.get(item.dataProps, 'options.legend.displayMode');
               return (
-                <div style={{ height: 400, border: '1px solid #efefef' }}>
+                <div style={{ height: 700, border: '1px solid #efefef' }}>
                   <Renderer
                     dashboardId={item.id}
                     key={index}

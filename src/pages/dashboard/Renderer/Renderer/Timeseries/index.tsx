@@ -24,6 +24,7 @@ import { IPanel } from '../../../types';
 import { hexPalette } from '../../../config';
 import valueFormatter from '../../utils/valueFormatter';
 import { getLegendValues } from '../../utils/getCalculatedValuesBySeries';
+import localeCompare from '../../utils/localeCompare';
 import './style.less';
 
 interface IProps {
@@ -228,22 +229,27 @@ export default function index(props: IProps) {
                 {
                   title: 'Max',
                   dataIndex: 'max',
+                  sorter: (a, b) => localeCompare(a.results.max, b.results.max),
                 },
                 {
                   title: 'Min',
                   dataIndex: 'min',
+                  sorter: (a, b) => localeCompare(a.results.min, b.results.min),
                 },
                 {
                   title: 'Avg',
                   dataIndex: 'avg',
+                  sorter: (a, b) => localeCompare(a.results.avg, b.results.avg),
                 },
                 {
                   title: 'Sum',
                   dataIndex: 'sum',
+                  sorter: (a, b) => localeCompare(a.results.sum, b.results.sum),
                 },
                 {
                   title: 'Last',
                   dataIndex: 'last',
+                  sorter: (a, b) => localeCompare(a.results.last, b.results.last),
                 },
               ]}
               dataSource={legendData}

@@ -108,6 +108,7 @@ export const getLegendValues = (series: any[], { util, decimals }, hexPalette: s
       avg: valueFormatter({ util, decimals }, results.avg),
       sum: valueFormatter({ util, decimals }, results.sum),
       last: valueFormatter({ util, decimals }, results.last),
+      results,
     };
   });
   return values;
